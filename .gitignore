@@ -1,0 +1,23 @@
+# Python / Virtual Environment
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Pytest / Cache
+.pytest_cache/
+.gx/
+uncommitted/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# MedViet Lab Specifics
+medviet-governance/.vault_key
+medviet-governance/data/raw/
+*.zip
+
+# OS Files
+.DS_Store
+Thumbs.db

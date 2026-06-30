@@ -28,13 +28,21 @@ deny if {
 # TODO: Data Analyst chỉ được đọc aggregated metrics và viết reports
 allow if {
     input.user.role == "data_analyst"
-    # Hoàn thành rule này
+    input.resource == "aggregated_metrics"
+    input.action == "read"
+}
+
+allow if {
+    input.user.role == "data_analyst"
+    input.resource == "reports"
+    input.action == "write"
 }
 
 # TODO: Intern chỉ được access sandbox
 allow if {
     input.user.role == "intern"
-    # Hoàn thành rule này
+    input.resource == "sandbox_data"
+    input.action in {"read", "write"}
 }
 
 # Rule: không ai được export restricted data ra ngoài VN servers
